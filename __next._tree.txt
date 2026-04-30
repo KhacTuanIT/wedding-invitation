@@ -1,3 +1,3 @@
 :HL["/wedding-invitation/_next/static/chunks/15z5sv-ojf-h4.css","style"]
 :HL["/wedding-invitation/_next/static/chunks/0_gk9t1avv6z1.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"ounhbGidSUDkTq9hSoLrl"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"XhIB-7-vL07bebTUeGDPX"}
