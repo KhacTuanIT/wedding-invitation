@@ -1,0 +1,264 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: var(--space-3xl) var(--space-lg);
+}
+
+/* ============================================
+   BACKGROUND
+   ============================================ */
+.bgLayer {
+  position: absolute;
+  inset: -30px;
+  background: linear-gradient(
+    160deg,
+    var(--color-ivory) 0%,
+    var(--color-cream) 25%,
+    var(--color-blush) 50%,
+    var(--color-cream) 75%,
+    var(--color-ivory) 100%
+  );
+  z-index: 0;
+}
+
+.bgLayer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(245, 225, 218, 0.3) 0%, transparent 50%);
+}
+
+/* ============================================
+   FLORALS
+   ============================================ */
+.decorLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.floralTopRight {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: clamp(180px, 25vw, 350px);
+  opacity: 0.25;
+  transform: scaleX(-1);
+}
+
+.floralBottomLeft {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: clamp(180px, 25vw, 350px);
+  opacity: 0.25;
+  transform: scaleX(-1) rotate(180deg);
+}
+
+/* ============================================
+   CONTENT
+   ============================================ */
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+}
+
+.preTitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.65rem, 1.5vw, 0.8rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+  margin-bottom: var(--space-lg);
+}
+
+/* ============================================
+   NAMES
+   ============================================ */
+.names {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 3vw, 2rem);
+  margin-bottom: var(--space-md);
+}
+
+.name {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  line-height: 1;
+}
+
+.ampersand {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  font-style: italic;
+}
+
+/* ============================================
+   DIVIDER
+   ============================================ */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: var(--space-md) 0 var(--space-lg);
+}
+
+.dividerLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+}
+
+.dividerLine:last-child {
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.dividerDiamond {
+  width: 8px;
+  height: 8px;
+  background: var(--color-gold);
+  transform: rotate(45deg);
+}
+
+/* ============================================
+   SUBTITLE & DATE
+   ============================================ */
+.subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: var(--color-charcoal-light);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: var(--space-xl);
+  font-style: italic;
+}
+
+.dateBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.dateDay {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+}
+
+.dateBig {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.dateMonth {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  letter-spacing: 0.1em;
+}
+
+.dateNum {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.dateYear {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  letter-spacing: 0.1em;
+}
+
+.dateTime {
+  font-family: var(--font-serif);
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ============================================
+   SCROLL INDICATOR
+   ============================================ */
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: var(--space-2xl);
+}
+
+.scrollDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.scrollText {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-2xl) var(--space-sm);
+  }
+
+  .dividerLine {
+    width: 40px;
+  }
+
+  .dateBig {
+    gap: var(--space-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .names {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .ampersand {
+    font-size: 1.2rem;
+  }
+}

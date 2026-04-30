@@ -1,0 +1,106 @@
+.section {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(
+    180deg,
+    var(--color-ivory) 0%,
+    var(--color-cream) 100%
+  );
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ============================================
+   STORY LIST
+   ============================================ */
+.storyList {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.storyItem {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+  flex-shrink: 0;
+}
+
+.timelineLine {
+  width: 1px;
+  flex: 1;
+  min-height: 40px;
+  background: linear-gradient(180deg, var(--color-gold), transparent);
+  margin-top: 8px;
+}
+
+/* ============================================
+   STORY CONTENT
+   ============================================ */
+.storyContent {
+  flex: 1;
+}
+
+.storyYear {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.storyTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-xs);
+}
+
+.storyText {
+  font-family: var(--font-serif);
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  font-weight: 300;
+  color: var(--color-charcoal-light);
+  line-height: 1.9;
+  font-style: italic;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .storyList {
+    padding: 0 var(--space-xs);
+  }
+
+  .storyItem {
+    gap: var(--space-sm);
+  }
+}

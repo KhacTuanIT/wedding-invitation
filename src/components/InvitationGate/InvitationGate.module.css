@@ -1,0 +1,315 @@
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+/* ============================================
+   BACKGROUND - Ken Burns
+   ============================================ */
+.background {
+  position: absolute;
+  inset: -20px;
+  background: linear-gradient(
+    135deg,
+    var(--color-ivory) 0%,
+    var(--color-cream) 30%,
+    var(--color-blush) 60%,
+    var(--color-cream) 100%
+  );
+  z-index: 0;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(212, 175, 55, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(212, 160, 160, 0.1) 0%,
+      transparent 50%
+    );
+}
+
+/* ============================================
+   DECORATIVE LAYER
+   ============================================ */
+.decorLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.floralTopLeft {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 320px;
+  height: auto;
+  opacity: 0.35;
+  transform: rotate(0deg);
+}
+
+.floralBottomRight {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 320px;
+  height: auto;
+  opacity: 0.35;
+  transform: rotate(180deg);
+}
+
+/* ============================================
+   ENVELOPE WRAPPER
+   ============================================ */
+.envelopeWrapper {
+  position: relative;
+  width: min(460px, 85vw);
+  height: min(600px, 75vh);
+  z-index: 10;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   COVERS
+   ============================================ */
+.cover {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-cream-light) 0%,
+    var(--color-cream) 50%,
+    var(--color-blush) 100%
+  );
+  box-shadow: var(--shadow-elevated);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  z-index: 20;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.coverLeft {
+  left: 0;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  transform-origin: left center;
+  background: linear-gradient(
+    100deg,
+    var(--color-cream-light) 0%,
+    var(--color-cream) 100%
+  );
+}
+
+.coverRight {
+  right: 0;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  transform-origin: right center;
+  background: linear-gradient(
+    260deg,
+    var(--color-cream-light) 0%,
+    var(--color-cream) 100%
+  );
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+}
+
+.coverContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-lg);
+}
+
+.coverOrnament {
+  width: 60px;
+  height: 60px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  opacity: 0.6;
+}
+
+.ornamentSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.coverScript {
+  font-family: var(--font-script);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--color-charcoal-soft);
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 10rem;
+}
+
+.coverDate {
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--color-charcoal-soft);
+  text-align: center;
+  margin-top: 10rem;
+}
+
+/* ============================================
+   WAX SEAL
+   ============================================ */
+.seal {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sealImage {
+  width: clamp(80px, 18vw, 120px);
+  height: clamp(80px, 18vw, 120px);
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.4));
+  pointer-events: none;
+  transition: filter 0.4s var(--ease-elegant);
+}
+
+.seal:hover .sealImage {
+  filter: drop-shadow(0 4px 30px rgba(212, 175, 55, 0.6));
+}
+
+.sealHint {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ============================================
+   INNER PREVIEW
+   ============================================ */
+.innerPreview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  padding: var(--space-lg);
+}
+
+.innerScript {
+  font-family: var(--font-script);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: var(--color-charcoal);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.innerDivider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  margin: var(--space-md) 0;
+}
+
+.innerDate {
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--color-charcoal-soft);
+  text-align: center;
+}
+
+/* ============================================
+   BOTTOM TEXT
+   ============================================ */
+.bottomText {
+  position: absolute;
+  bottom: var(--space-xl);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+  z-index: 10;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .floralTopLeft {
+    width: 200px;
+    top: -30px;
+    left: -30px;
+  }
+
+  .floralBottomRight {
+    width: 200px;
+    bottom: -30px;
+    right: -30px;
+  }
+
+  .envelopeWrapper {
+    width: 88vw;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .floralTopLeft,
+  .floralBottomRight {
+    width: 160px;
+  }
+
+  .envelopeWrapper {
+    width: 92vw;
+    height: 65vh;
+  }
+}

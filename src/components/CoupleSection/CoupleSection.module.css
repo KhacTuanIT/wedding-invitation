@@ -1,0 +1,131 @@
+.section {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--color-ivory);
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   COUPLE GRID
+   ============================================ */
+.coupleGrid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.person {
+  flex: 1;
+  max-width: 340px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================
+   IMAGE CARD
+   ============================================ */
+.imageCard {
+  padding: 12px;
+  margin-bottom: var(--space-md);
+  width: 100%;
+  transition: transform 0.6s var(--ease-elegant), box-shadow 0.6s var(--ease-elegant);
+}
+
+.imageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-elegant), filter 0.8s var(--ease-elegant);
+}
+
+.imageCard:hover .photo {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+/* ============================================
+   TEXT
+   ============================================ */
+.personName {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: 4px;
+}
+
+.personRole {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.personBio {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  line-height: 1.7;
+  font-style: italic;
+  max-width: 280px;
+}
+
+/* ============================================
+   HEART DIVIDER
+   ============================================ */
+.heartDivider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.heartIcon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .coupleGrid {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .person {
+    max-width: 300px;
+  }
+
+  .heartDivider {
+    transform: rotate(0deg);
+  }
+}

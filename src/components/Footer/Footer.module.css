@@ -1,0 +1,102 @@
+.footer {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg) var(--space-xl);
+  background: linear-gradient(
+    180deg,
+    var(--color-ivory) 0%,
+    var(--color-cream) 50%,
+    #ece2d5 100%
+  );
+  text-align: center;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ============================================
+   ORNAMENT
+   ============================================ */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-md);
+}
+
+.ornamentLine {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold));
+}
+
+.ornamentLine:last-child {
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.ornamentHeart {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+/* ============================================
+   TEXT
+   ============================================ */
+.names {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-charcoal);
+}
+
+.date {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-charcoal-soft);
+}
+
+.message {
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  font-weight: 300;
+  color: var(--color-charcoal-light);
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+
+.hashtag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  margin-top: var(--space-sm);
+}
+
+/* ============================================
+   BOTTOM BAR
+   ============================================ */
+.bottomBar {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  width: 100%;
+}
+
+.credit {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: var(--color-charcoal-soft);
+  opacity: 0.6;
+}
