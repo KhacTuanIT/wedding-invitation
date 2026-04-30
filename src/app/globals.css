@@ -3,7 +3,7 @@
    ============================================ */
 
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Great+Vibes&display=swap");
 
 /* ============================================
    CSS CUSTOM PROPERTIES
@@ -34,15 +34,15 @@
   --color-black-alpha-60: rgba(0, 0, 0, 0.6);
 
   /* Typography */
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
-  --font-sans: 'Montserrat', 'Helvetica Neue', sans-serif;
-  --font-script: 'Great Vibes', cursive;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Montserrat", "Helvetica Neue", sans-serif;
+  --font-script: "Great Vibes", cursive;
 
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
-  --space-lg: 2.5rem;
+  --space-lg: 1.5rem;
   --space-xl: 4rem;
   --space-2xl: 6rem;
   --space-3xl: 8rem;
@@ -54,7 +54,7 @@
   --radius-xl: 24px;
 
   /* Transitions */
-  --ease-elegant: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-elegant: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 
@@ -74,7 +74,9 @@
 /* ============================================
    RESET & BASE
    ============================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -99,7 +101,12 @@ body {
   letter-spacing: 0.02em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 400;
   line-height: 1.2;
@@ -169,7 +176,12 @@ button {
 .gold-divider {
   width: 60px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
   margin: var(--space-md) auto;
 }
 
@@ -257,7 +269,8 @@ button {
     padding: var(--space-2xl) var(--space-sm);
   }
 
-  .container, .narrow-container {
+  .container,
+  .narrow-container {
     padding: 0 var(--space-sm);
   }
 }

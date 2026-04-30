@@ -14,37 +14,41 @@ const links = [
   { href: "#map", label: "Bản đồ" },
 ];
 
+function debounce<T extends (...args: unknown[]) => void>(
+  func: T,
+  wait: number,
+): (...args: Parameters<T>) => void {
+  let timeout: ReturnType<typeof setTimeout>;
+  return function (this: unknown, ...args: Parameters<T>) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
 export default function NavigationOverlay() {
   const [isHiddenOnMobile, setIsHiddenOnMobile] = useState(false);
   const lastScrollY = useRef(0);
-  const ticking = useRef(false);
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
 
-    const handleScroll = () => {
-      if (ticking.current) return;
+    const handleScroll = debounce(() => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
+      const isMobile = window.matchMedia("(max-width: 760px)").matches;
 
-      ticking.current = true;
-      requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        const delta = currentScrollY - lastScrollY.current;
-        const isMobile = window.matchMedia("(max-width: 760px)").matches;
+      if (!isMobile) {
+        setIsHiddenOnMobile(false);
+      } else if (currentScrollY < 80) {
+        setIsHiddenOnMobile(false);
+      } else if (delta > 8) {
+        setIsHiddenOnMobile(true);
+      } else if (delta < -8) {
+        setIsHiddenOnMobile(false);
+      }
 
-        if (!isMobile) {
-          setIsHiddenOnMobile(false);
-        } else if (currentScrollY < 80) {
-          setIsHiddenOnMobile(false);
-        } else if (delta > 8) {
-          setIsHiddenOnMobile(true);
-        } else if (delta < -8) {
-          setIsHiddenOnMobile(false);
-        }
-
-        lastScrollY.current = currentScrollY;
-        ticking.current = false;
-      });
-    };
+      lastScrollY.current = currentScrollY;
+    }, 100);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll);

@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { EASE_CINEMATIC } from "@/lib/utils";
 import styles from "./CountdownSection.module.css";
 
-const WEDDING_DATE = new Date("2026-08-12T16:00:00");
+const WEDDING_DATE = new Date("2026-05-15T11:00:00");
 
 interface TimeLeft {
   days: number;
@@ -110,7 +110,7 @@ export default function CountdownSection() {
           ))}
         </div>
 
-        <p className={styles.dateText}>12 tháng 8, 2026 / 16:00</p>
+        <p className={styles.dateText}>15 tháng 5, 2026 / 11:00</p>
       </motion.div>
     </section>
   );

@@ -103,13 +103,11 @@ export default function HeroSection() {
         <motion.div className={styles.dateBlock} variants={fadeUp}>
           <span className={styles.dateDay}>Thứ Bảy</span>
           <div className={styles.dateBig}>
-            <span className={styles.dateMonth}>Tháng 8</span>
-            <span className={styles.dateNum}>12</span>
+            <span className={styles.dateMonth}>Tháng 5</span>
+            <span className={styles.dateNum}>15</span>
             <span className={styles.dateYear}>2026</span>
           </div>
-          <span className={styles.dateTime}>
-            vào lúc bốn giờ chiều
-          </span>
+          <span className={styles.dateTime}>vào lúc 11 giờ sáng</span>
         </motion.div>
 
         <motion.div className={styles.scrollIndicator} variants={fadeUp}>

@@ -9,13 +9,18 @@ import styles from "./EventSection.module.css";
 const events = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
         <circle cx="12" cy="7" r="4" />
       </svg>
     ),
     title: "Lễ Thành Hôn",
-    time: "16:00",
+    time: "11:00",
     location: "Nhà Thờ Thánh Tâm",
     address: "123 Đại lộ Tình Yêu, TP. Hồ Chí Minh",
     description:
@@ -23,7 +28,12 @@ const events = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      >
         <path d="M17 11h1a3 3 0 0 1 0 6h-1" />
         <path d="M9 12v6" />
         <path d="M13 12v6" />
@@ -33,7 +43,7 @@ const events = [
       </svg>
     ),
     title: "Tiệc Cưới",
-    time: "18:00",
+    time: "12:00",
     location: "Grand Lotus Ballroom",
     address: "456 Đường Hạnh Phúc, TP. Hồ Chí Minh",
     description:
@@ -74,7 +84,13 @@ export default function EventSection() {
             <h3 className={styles.eventTitle}>{event.title}</h3>
 
             <div className={styles.eventDetail}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={styles.detailIcon}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className={styles.detailIcon}
+              >
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12,6 12,12 16,14" />
               </svg>
@@ -82,7 +98,13 @@ export default function EventSection() {
             </div>
 
             <div className={styles.eventDetail}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={styles.detailIcon}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className={styles.detailIcon}
+              >
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>

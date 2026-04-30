@@ -6,9 +6,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages deployment - update this to your repo name
-  basePath: "/wedding-invitation",
-  assetPrefix: "/wedding-invitation/",
+  basePath: process.env.NODE_ENV === "production" ? "/wedding-invitation" : "",
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "/wedding-invitation/" : "",
+  trailingSlash: true, // Ensure trailing slashes for GitHub Pages compatibility
 };
 
 export default nextConfig;
