@@ -1,2 +1,2 @@
-:HL["/wedding-invitation/_next/static/chunks/15z5sv-ojf-h4.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"tdRqzRsGowwVj9zd6UYIv"}
+:HL["/your-repository-name/_next/static/chunks/15z5sv-ojf-h4.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"lIXuEHqmHTC_WPNYBAeZV"}
