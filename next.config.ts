@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   // For GitHub Pages deployment - update this to your repo name
-  basePath: process.env.NODE_ENV === "production" ? "/wedding-invitation" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/wedding-invitation/" : "",
+  basePath: "/wedding-invitation",
+  assetPrefix: "/wedding-invitation/",
 };
 
 export default nextConfig;
