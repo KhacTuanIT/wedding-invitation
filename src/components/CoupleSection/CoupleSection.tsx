@@ -20,7 +20,7 @@ export default function CoupleSection() {
         transition={{ duration: 1, ease: EASE_CINEMATIC }}
       >
         <p className="section-subheading">Cô Dâu & Chú Rể</p>
-        <h2 className="section-heading">Anh & Binh</h2>
+        <h2 className="section-heading">Sỹ & A</h2>
         <div className="gold-divider" />
 
         <div className={styles.coupleGrid}>
@@ -34,7 +34,7 @@ export default function CoupleSection() {
               <div className={styles.imageWrapper}>
                 <img
                   src={assetPath("/images/couple.png")}
-                  alt="Anh"
+                  alt="Sỹ"
                   className={styles.photo}
                   loading="lazy"
                 />
@@ -73,7 +73,7 @@ export default function CoupleSection() {
               <div className={styles.imageWrapper}>
                 <img
                   src={assetPath("/images/couple.png")}
-                  alt="Binh"
+                  alt="A"
                   className={styles.photo}
                   loading="lazy"
                 />

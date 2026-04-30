@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Anh & Binh - Thiệp Cưới",
+  title: "Sỹ & A - Thiệp Cưới",
   description:
-    "Trân trọng kính mời bạn đến chung vui trong lễ cưới của Anh & Binh.",
-  keywords: ["wedding", "thiệp cưới", "Anh", "Binh", "lễ cưới", "tình yêu"],
+    "Trân trọng kính mời bạn đến chung vui trong lễ cưới của Sỹ & A.",
+  keywords: ["wedding", "thiệp cưới", "Sỹ", "A", "lễ cưới", "tình yêu"],
   openGraph: {
-    title: "Anh & Binh - Thiệp Cưới",
+    title: "Sỹ & A - Thiệp Cưới",
     description:
-      "Trân trọng kính mời bạn đến chung vui trong lễ cưới của Anh & Binh.",
+      "Trân trọng kính mời bạn đến chung vui trong lễ cưới của Sỹ & A.",
     type: "website",
   },
 };

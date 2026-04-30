@@ -85,9 +85,9 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.h1 className={styles.names} variants={fadeUp}>
-          <span className={styles.name}>Anh</span>
+          <span className={styles.name}>Sỹ</span>
           <span className={styles.ampersand}>&</span>
-          <span className={styles.name}>Binh</span>
+          <span className={styles.name}>A</span>
         </motion.h1>
 
         <motion.div className={styles.divider} variants={fadeIn}>

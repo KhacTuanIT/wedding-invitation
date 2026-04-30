@@ -227,7 +227,7 @@ export default function InvitationGate({ onOpen }: InvitationGateProps) {
                 ease: EASE_CINEMATIC,
               }}
             >
-              <p className={styles.innerScript}>Anh & Binh</p>
+              <p className={styles.innerScript}>Sỹ & A</p>
               <div className={styles.innerDivider} />
               <p className={styles.innerDate}>Trân trọng kính mời</p>
             </motion.div>
