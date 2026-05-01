@@ -1,9 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { EASE_CINEMATIC } from "@/lib/utils";
 import styles from "./NavigationOverlay.module.css";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#hero", label: "Lời mời" },
@@ -11,6 +13,7 @@ const links = [
   { href: "#story", label: "Câu chuyện" },
   { href: "#gallery", label: "Album" },
   { href: "#events", label: "Lịch trình" },
+  { href: "#gift", label: "Tiền mừng" },
   { href: "#map", label: "Bản đồ" },
 ];
 
@@ -28,7 +31,20 @@ function debounce<T extends (...args: unknown[]) => void>(
 export default function NavigationOverlay() {
   const [isHiddenOnMobile, setIsHiddenOnMobile] = useState(false);
   const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(false);
+  const [portalTarget, setPortalTarget] = useState<HTMLDivElement | null>(null);
   const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const target = document.createElement("div");
+    target.id = "navigation-overlay-portal";
+    document.body.appendChild(target);
+    // eslint-disable-next-line
+    setPortalTarget(target);
+
+    return () => {
+      document.body.removeChild(target);
+    };
+  }, []);
 
   useEffect(() => {
     lastScrollY.current = window.scrollY;
@@ -66,11 +82,15 @@ export default function NavigationOverlay() {
 
   const handleLinkClick = () => {
     if (window.matchMedia("(max-width: 760px)").matches) {
-      setIsExpandedOnMobile(false);
+      // setIsExpandedOnMobile(false); --- IGNORE ---
     }
   };
 
-  return (
+  if (!portalTarget) {
+    return null;
+  }
+
+  return createPortal(
     <motion.nav
       className={`${styles.nav} ${
         isHiddenOnMobile ? styles.navHiddenMobile : ""
@@ -90,7 +110,7 @@ export default function NavigationOverlay() {
         aria-expanded={isExpandedOnMobile}
         aria-label={isExpandedOnMobile ? "Thu gọn điều hướng" : "Mở điều hướng"}
       >
-        {isExpandedOnMobile ? "×" : "≡"}
+        {isExpandedOnMobile ? <X /> : <Menu />}
       </button>
       <div className={styles.links}>
         {links.map((link) => (
@@ -104,6 +124,7 @@ export default function NavigationOverlay() {
           </a>
         ))}
       </div>
-    </motion.nav>
+    </motion.nav>,
+    portalTarget,
   );
 }

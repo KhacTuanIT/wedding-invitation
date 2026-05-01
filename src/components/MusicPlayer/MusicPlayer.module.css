@@ -53,26 +53,51 @@
 }
 
 /* Default (paused) state */
-.bar1 { height: 4px; }
-.bar2 { height: 8px; }
-.bar3 { height: 6px; }
-.bar4 { height: 4px; }
+.bar1 {
+  height: 4px;
+}
+.bar2 {
+  height: 8px;
+}
+.bar3 {
+  height: 6px;
+}
+.bar4 {
+  height: 4px;
+}
 
 /* Playing state - animated */
 .playing .bar {
   animation: equalizer 1.2s ease-in-out infinite;
 }
 
-.playing .bar1 { animation-delay: 0s; }
-.playing .bar2 { animation-delay: 0.2s; }
-.playing .bar3 { animation-delay: 0.4s; }
-.playing .bar4 { animation-delay: 0.6s; }
+.playing .bar1 {
+  animation-delay: 0s;
+}
+.playing .bar2 {
+  animation-delay: 0.2s;
+}
+.playing .bar3 {
+  animation-delay: 0.4s;
+}
+.playing .bar4 {
+  animation-delay: 0.6s;
+}
 
 @keyframes equalizer {
-  0%, 100% { height: 4px; }
-  25% { height: 14px; }
-  50% { height: 8px; }
-  75% { height: 16px; }
+  0%,
+  100% {
+    height: 4px;
+  }
+  25% {
+    height: 14px;
+  }
+  50% {
+    height: 8px;
+  }
+  75% {
+    height: 16px;
+  }
 }
 
 /* ============================================
@@ -80,9 +105,7 @@
    ============================================ */
 @media (max-width: 768px) {
   .musicButton {
-    bottom: var(--space-md);
-    right: var(--space-md);
-    width: 42px;
-    height: 42px;
+    bottom: var(--space-sm);
+    right: 10px;
   }
 }

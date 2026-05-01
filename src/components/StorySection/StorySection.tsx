@@ -1,6 +1,5 @@
-"use client";
-
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { EASE_CINEMATIC } from "@/lib/utils";
@@ -8,24 +7,22 @@ import styles from "./StorySection.module.css";
 
 const stories = [
   {
-    year: "2020",
+    id: "story1",
     title: "Lần Đầu Gặp Gỡ",
-    text: "Trong một buổi chiều dịu nhẹ, định mệnh đã đưa hai tâm hồn đến gần nhau trong một cuộc gặp gỡ tình cờ. Từ một câu chuyện giản đơn, tình yêu lặng lẽ nảy mầm và mở ra hành trình của mãi mãi.",
+    text: "Giữa hàng triệu người ngoài kia, chúng ta gặp nhau vào một ngày rất đỗi bình thường. Không ai biết rằng khoảnh khắc ấy lại là điểm bắt đầu cho một câu chuyện đặc biệt — nơi hai con người xa lạ dần trở nên quen thuộc, rồi không thể thiếu trong cuộc đời nhau.",
+    image: "/images/story1.jpg",
   },
   {
-    year: "2021",
-    title: "Buổi Hẹn Đầu",
-    text: "Một quán cà phê yên tĩnh, hương cà phê mới pha và tiếng mưa rất khẽ ngoài hiên. Thời gian như trôi nhanh hơn khi cả hai nhận ra những ước mơ chung, những hy vọng thầm thì và một sự kết nối khó gọi thành lời.",
-  },
-  {
-    year: "2023",
+    id: "story3",
     title: "Hành Trình Yêu",
-    text: "Qua những mùa của tiếng cười và cả những giọt nước mắt, qua những hoàng hôn cùng ngắm và những buổi sáng bình yên bên nhau, tình yêu ấy lớn dần trong tin tưởng, kiên nhẫn và niềm vui.",
+    text: "Hai năm bên nhau là hành trình của những nụ cười, những lần nắm tay thật chặt, và cả những lúc im lặng nhưng vẫn hiểu nhau. Chúng ta đã cùng đi qua những ngày vui vẻ nhất và cả những lúc khó khăn, để rồi nhận ra rằng điều quý giá nhất không phải là những gì ta có, mà là người luôn ở cạnh ta.",
+    image: "/images/story3.jpg",
   },
   {
-    year: "2025",
+    id: "story4",
     title: "Lời Cầu Hôn",
-    text: "Dưới bầu trời đầy sao, trong tiếng sóng biển dịu dàng làm chứng, anh đã ngỏ lời cho một hành trình mới. Và trong niềm hạnh phúc vỡ òa, cô ấy đã gật đầu.",
+    text: "Và rồi, vào một ngày không còn bình thường nữa, một câu hỏi giản dị được cất lên: “Em/Anh có đồng ý cùng anh/em đi hết phần đời còn lại không?” Không cần câu trả lời quá dài, chỉ một cái gật đầu — nhưng lại là lời hứa cho cả một chặng đường phía trước. Từ khoảnh khắc ấy, câu chuyện của chúng ta không chỉ là tình yêu, mà là sự bắt đầu của một mái ấm.",
+    image: "/images/story4.jpg",
   },
 ];
 
@@ -37,6 +34,7 @@ function StoryItem({
   index: number;
 }) {
   const { ref, isVisible } = useScrollReveal({ threshold: 0.2 });
+  const [imageError, setImageError] = useState(false);
 
   return (
     <motion.div
@@ -55,7 +53,21 @@ function StoryItem({
         <div className={styles.timelineLine} />
       </div>
       <div className={styles.storyContent}>
-        <span className={styles.storyYear}>{story.year}</span>
+        <div className={styles.storyImage}>
+          {!imageError ? (
+            <Image
+              src={story.image}
+              alt={story.title}
+              width={300}
+              height={200}
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className={styles.imageFallback}>
+              <span>💕</span>
+            </div>
+          )}
+        </div>
         <h3 className={styles.storyTitle}>{story.title}</h3>
         <p className={styles.storyText}>{story.text}</p>
       </div>
@@ -81,7 +93,7 @@ export default function StorySection() {
 
       <div className={styles.storyList}>
         {stories.map((story, i) => (
-          <StoryItem key={story.year} story={story} index={i} />
+          <StoryItem key={story.id} story={story} index={i} />
         ))}
       </div>
     </section>

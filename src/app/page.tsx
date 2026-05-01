@@ -10,6 +10,7 @@ import StorySection from "@/components/StorySection/StorySection";
 import GallerySection from "@/components/GallerySection/GallerySection";
 import EventSection from "@/components/EventSection/EventSection";
 import MapSection from "@/components/MapSection/MapSection";
+import GiftRegistry from "@/components/GiftRegistry/GiftRegistry";
 import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 import NavigationOverlay from "@/components/NavigationOverlay/NavigationOverlay";
 import Footer from "@/components/Footer/Footer";
@@ -44,6 +45,7 @@ export default function Home() {
             <StorySection />
             <GallerySection />
             <EventSection />
+            <GiftRegistry />
             <MapSection />
             <Footer />
           </motion.main>

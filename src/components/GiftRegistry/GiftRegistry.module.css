@@ -1,0 +1,273 @@
+.section {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg);
+  background: linear-gradient(
+    180deg,
+    var(--color-cream) 0%,
+    rgba(245, 225, 218, 0.5) 50%,
+    var(--color-cream) 100%
+  );
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.heartIcon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+  color: var(--color-gold);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.headerDescription {
+  max-width: 600px;
+  margin: var(--space-lg) auto 0;
+  font-family: var(--font-serif);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 300;
+  color: var(--color-charcoal-soft);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* ============================================
+   PAYMENTS GRID
+   ============================================ */
+.paymentsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: 1000px;
+  margin: 0 auto var(--space-3xl);
+}
+
+/* ============================================
+   PAYMENT CARD
+   ============================================ */
+.paymentCard {
+  padding: var(--space-xl);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  position: relative;
+  transition:
+    transform 0.6s var(--ease-elegant),
+    box-shadow 0.6s var(--ease-elegant);
+}
+
+.paymentCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.methodTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 500;
+  color: var(--color-charcoal);
+  letter-spacing: 0.04em;
+}
+
+.methodDescription {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  font-weight: 300;
+  color: var(--color-charcoal-light);
+  line-height: 1.6;
+}
+
+.details {
+  width: 100%;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.detailRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: var(--space-sm);
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--color-charcoal);
+  letter-spacing: 0.02em;
+}
+
+.value {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: var(--color-charcoal-light);
+  font-weight: 400;
+}
+
+.copyableValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.copyableValue span {
+  flex: 1;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: var(--color-charcoal-light);
+  word-break: break-all;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-gold);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.3s var(--ease-elegant);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.copyButton:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: scale(1.05);
+}
+
+.qrCodePlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-charcoal-light);
+  font-size: 0.85rem;
+  min-height: 180px;
+}
+
+.copiedNotice {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: var(--color-gold);
+  color: var(--color-white);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  text-align: center;
+  padding: var(--space-lg);
+  background: rgba(212, 175, 55, 0.08);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.thankYou {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) var(--space-sm);
+  }
+
+  .paymentsGrid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    gap: var(--space-md);
+  }
+
+  .paymentCard {
+    padding: var(--space-lg);
+  }
+
+  .details {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+  }
+
+  .detailRow {
+    margin-bottom: var(--space-xs);
+  }
+
+  .footer {
+    padding: var(--space-md);
+  }
+
+  .thankYou {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .paymentsGrid {
+    max-width: 100%;
+  }
+
+  .paymentCard {
+    padding: var(--space-md);
+  }
+
+  .methodTitle {
+    font-size: 1.1rem;
+  }
+
+  .methodDescription {
+    font-size: 0.75rem;
+  }
+}

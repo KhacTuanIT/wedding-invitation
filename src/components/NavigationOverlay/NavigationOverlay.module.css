@@ -1,17 +1,18 @@
 .nav {
   position: fixed;
   top: 18px;
-  left: 50%;
-  z-index: 9000;
+  left: 45%;
+  z-index: 10000;
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   width: min(780px, calc(100vw - 32px));
   height: 54px;
   padding: 0 10px 0 16px;
   transform: translateX(-50%);
   border-radius: 999px;
   max-width: calc(100vw - 32px);
+  pointer-events: auto;
   transition:
     opacity 0.45s var(--ease-cinematic),
     transform 0.45s var(--ease-cinematic);
@@ -31,10 +32,12 @@
   letter-spacing: 0.04em;
   background: rgba(255, 255, 255, 0.38);
   border: 1px solid rgba(212, 175, 55, 0.18);
+  pointer-events: auto;
 }
 
 .toggleButton {
   display: none;
+  pointer-events: auto;
 }
 
 .brand span {
@@ -49,6 +52,7 @@
   gap: 4px;
   width: 100%;
   min-width: 0;
+  pointer-events: auto;
 }
 
 .link {
@@ -66,6 +70,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
+  pointer-events: auto;
   transition:
     color 0.35s var(--ease-elegant),
     background 0.35s var(--ease-elegant),
@@ -93,6 +98,8 @@
     transform: none;
     border-radius: 999px;
     overflow: hidden;
+    z-index: 10000;
+    pointer-events: auto;
   }
 
   .nav.navExpanded {
@@ -120,8 +127,7 @@
     border-radius: 50%;
     color: var(--color-charcoal);
     font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.38);
-    border: 1px solid rgba(212, 175, 55, 0.18);
+    pointer-events: auto;
     transition:
       transform 0.25s var(--ease-elegant),
       background 0.25s var(--ease-elegant);
@@ -129,7 +135,6 @@
 
   .toggleButton:hover,
   .toggleButton:focus-visible {
-    background: rgba(255, 255, 255, 0.55);
     transform: scale(1.03);
   }
 
