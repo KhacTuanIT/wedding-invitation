@@ -27,6 +27,7 @@ function debounce<T extends (...args: unknown[]) => void>(
 
 export default function NavigationOverlay() {
   const [isHiddenOnMobile, setIsHiddenOnMobile] = useState(false);
+  const [isExpandedOnMobile, setIsExpandedOnMobile] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -59,11 +60,21 @@ export default function NavigationOverlay() {
     };
   }, []);
 
+  const toggleMobileNav = () => {
+    setIsExpandedOnMobile((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      setIsExpandedOnMobile(false);
+    }
+  };
+
   return (
     <motion.nav
       className={`${styles.nav} ${
         isHiddenOnMobile ? styles.navHiddenMobile : ""
-      } glass-card`}
+      } ${isExpandedOnMobile ? styles.navExpanded : ""} glass-card`}
       initial={{ opacity: 0, y: -18, filter: "blur(10px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{ duration: 1, delay: 1.1, ease: EASE_CINEMATIC }}
@@ -72,9 +83,23 @@ export default function NavigationOverlay() {
       <a className={styles.brand} href="#hero" aria-label="Quay lại lời mời">
         A<span>&</span>B
       </a>
+      <button
+        type="button"
+        className={styles.toggleButton}
+        onClick={toggleMobileNav}
+        aria-expanded={isExpandedOnMobile}
+        aria-label={isExpandedOnMobile ? "Thu gọn điều hướng" : "Mở điều hướng"}
+      >
+        {isExpandedOnMobile ? "×" : "≡"}
+      </button>
       <div className={styles.links}>
         {links.map((link) => (
-          <a key={link.href} href={link.href} className={styles.link}>
+          <a
+            key={link.href}
+            href={link.href}
+            className={styles.link}
+            onClick={handleLinkClick}
+          >
             {link.label}
           </a>
         ))}

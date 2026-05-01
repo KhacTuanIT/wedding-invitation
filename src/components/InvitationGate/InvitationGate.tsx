@@ -9,11 +9,6 @@ interface InvitationGateProps {
   onOpen: () => void;
 }
 
-type AudioWindow = Window &
-  typeof globalThis & {
-    webkitAudioContext?: typeof AudioContext;
-  };
-
 export default function InvitationGate({ onOpen }: InvitationGateProps) {
   const [isOpening, setIsOpening] = useState(false);
   const [isOpened, setIsOpened] = useState(false);

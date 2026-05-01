@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         <p className={styles.names}>Sỹ & A</p>
-        <p className={styles.date}>12 tháng 8, 2026</p>
+        <p className={styles.date}>15 tháng 15, 2026</p>
         <p className={styles.message}>
           Rất mong được đón tiếp và cùng bạn sẻ chia ngày vui này
         </p>
